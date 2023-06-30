@@ -30,7 +30,7 @@ git clone https://github.com/gareth-24/inventory-tracker.git
 3. Run the command `npm install` to install all Node packages and dependencies.
 4. run the command `npm run start` to bundle and begin running the project. The app will automatically open in your browser. 
 
-
+_This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)._
 
 ## Available Scripts
 
@@ -78,5 +78,5 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## License
 
-_[MIT License](https://github.com/gareth-24/inventory-tracker/License.txt)_
+_[MIT License](https://github.com/gareth-24/inventory-tracker/blob/main/LICENSE.txt)_
 
