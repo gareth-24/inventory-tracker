@@ -66,6 +66,7 @@ class CoffeeControl extends React.Component {
   }
 
   handleBuyClick = () => {
+    //reduces inventory amount by 1 lb of coffee beans
     const selectedCoffee = this.state.selectedCoffee;
 
     if (selectedCoffee.amount > 0) {
@@ -74,6 +75,15 @@ class CoffeeControl extends React.Component {
         selectedCoffee: null
       });
     }
+  }
+
+  handleRestockClick = () => {
+    //increases inventory amount by 1 burlap sack (130 lbs of beans)
+    const selectedCoffee = this.state.selectedCoffee;
+    this.setState({
+      mainCoffeeList: this.state.mainCoffeeList.filter(coffee => coffee.id !== selectedCoffee.id).concat({...selectedCoffee, amount: selectedCoffee.amount + 130}),
+      selectedCoffee: null
+    })
   }
 
   render(){
@@ -93,7 +103,8 @@ class CoffeeControl extends React.Component {
         coffee = {this.state.selectedCoffee}
         onClickingDelete = {this.handleDeletingCoffee}
         onClickingEdit = {this.handleEditClick}
-        onClickingBuy = {this.handleBuyClick} />;
+        onClickingBuy = {this.handleBuyClick}
+        onClickingRestock = {this.handleRestockClick} />;
       buttonText = "Return to Coffee List";
 
     } else if (this.state.formVisibleOnPage) {
