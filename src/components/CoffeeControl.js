@@ -65,6 +65,17 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  handleBuyClick = () => {
+    const selectedCoffee = this.state.selectedCoffee;
+
+    if (selectedCoffee.amount > 0) {
+      this.setState({
+        mainCoffeeList: this.state.mainCoffeeList.filter(coffee => coffee.id !== selectedCoffee.id).concat({...selectedCoffee, amount: selectedCoffee.amount - 1}),
+        selectedCoffee: null
+      });
+    }
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
@@ -81,7 +92,8 @@ class CoffeeControl extends React.Component {
       <CoffeeDetail
         coffee = {this.state.selectedCoffee}
         onClickingDelete = {this.handleDeletingCoffee}
-        onClickingEdit = {this.handleEditClick} />;
+        onClickingEdit = {this.handleEditClick}
+        onClickingBuy = {this.handleBuyClick} />;
       buttonText = "Return to Coffee List";
 
     } else if (this.state.formVisibleOnPage) {
