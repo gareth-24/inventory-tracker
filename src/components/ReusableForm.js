@@ -15,7 +15,7 @@ function ReusableForm(props) {
             placeholder="Peets's Coffee Big Bang " />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Amount (lbs):</Form.Label>
+          <Form.Label>Inventory Amount (lbs):</Form.Label>
             <Form.Control
               type='number'
               min='0'
@@ -23,7 +23,7 @@ function ReusableForm(props) {
               placeholder='130' />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Price ($):</Form.Label>
+          <Form.Label>Price per pound ($):</Form.Label>
           <Form.Control
             type='number'
             step='0.01'
