@@ -11,12 +11,15 @@ function ReusableForm(props) {
           placeholder='Coffee Name' />
         <input
           type='number'
+          min='0'
           name='amount'
-          placeholder='Amount' />
+          placeholder='Amount (lbs)' />
         <input
           type='number'
+          step='0.01'
+          min='0'
           name='price'
-          placeholder='Price' />
+          placeholder='Price ($)' />
         <textarea
           name='description'
           placeholder='Coffee Description' />
