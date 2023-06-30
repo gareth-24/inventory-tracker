@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function CoffeeDetail(props){
   const { coffee, onClickingDelete, onClickingBuy, onClickingRestock } = props;
@@ -8,20 +10,23 @@ function CoffeeDetail(props){
     <React.Fragment>
       <h1>Coffee Details</h1>
       <h3>{coffee.name}</h3>
-      <h5>Current Stock: {coffee.amount} lbs</h5>
-      <h5>Price per pound: ${coffee.price}</h5>
-      <p><em>{coffee.description}</em></p>
-      <button onClick={ props.onClickingEdit }>Update Coffee</button>
-      <button onClick={ ()=> onClickingDelete(coffee.id) }>Delete Coffee</button> 
-
+      <ul>
+        <li>Current Stock: {coffee.amount} lbs</li>
+        <li>Price per pound: ${coffee.price}</li>
+        <li><em>{coffee.description}</em></li>
+      </ul>
       {
         coffee.amount > 0? ( 
-          <button onClick={ ()=> onClickingBuy(coffee.id) }>Buy</button>
+          <Button onClick={ ()=> onClickingBuy(coffee.id) }>Buy</Button>
         ) : (
-          <h1>Sorry, {coffee.name} is currently out of stock.</h1>
+          <p class="alert alert-danger">Sorry, {coffee.name} is currently out of stock.</p>
         )
       }
-      <button onClick={ () => onClickingRestock(coffee.id) }>Restock</button>
+      <br/><br/>
+      <Button onClick={ () => onClickingRestock(coffee.id) }>Restock</Button>
+      <br/><br/>
+      <Button onClick={ props.onClickingEdit }>Update Coffee</Button>
+      <Button variant="warning" onClick={ ()=> onClickingDelete(coffee.id) }>Delete Coffee</Button>
       <hr/>
     </React.Fragment>
   );

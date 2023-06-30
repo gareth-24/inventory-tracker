@@ -3,6 +3,7 @@ import NewCoffeeForm from './NewCoffeeForm';
 import CoffeeList from "./CoffeeList";
 import CoffeeDetail from "./CoffeeDetail";
 import EditCoffeeForm from './EditCoffeeForm';
+import Button from "react-bootstrap/Button";
 
 class CoffeeControl extends React.Component {
 
@@ -124,7 +125,7 @@ class CoffeeControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <Button onClick={this.handleClick}>{buttonText}</Button>
       </React.Fragment>
     );
   }
