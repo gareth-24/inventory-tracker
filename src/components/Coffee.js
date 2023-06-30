@@ -6,8 +6,8 @@ function Coffee(props){
     <React.Fragment>
       <div onClick = {() => props.whenCoffeeClicked(props.id)}>
         <h3>{props.name}</h3>
-        <h5>{props.amount}</h5>
-        <h5>{props.price}</h5>
+        <h5>Current Stock: {props.amount} lbs</h5>
+        <h5>Price: ${props.price} / lb</h5>
         <p><em>{props.description}</em></p>
         <hr/>
       </div>
