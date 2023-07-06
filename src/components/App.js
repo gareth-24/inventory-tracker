@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import CoffeeControl from "./CoffeeControl";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function App(){
   return ( 

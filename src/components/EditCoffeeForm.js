@@ -9,8 +9,8 @@ function EditCoffeeForm (props) {
     e.preventDefault();
     props.onEditCoffee({
       name: e.target.name.value,
-      amount: e.target.amount.value,
-      price: e.target.price.value,
+      amount: parseInt(e.target.amount.value),
+      price: parseFloat(e.target.price.value),
       description: e.target.description.value,
       id: coffee.id
     });
